@@ -1,20 +1,23 @@
 {
   "name": "ember-cordova-events",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "test": "tests"
   },
+
   "license": "MIT",
   "repository": "",
   "engines": {
     "node": ">= 0.10.0"
   },
+
   "author": {
     "name": "Alex Blom",
     "email": "alex@isleofcode.com",
     "url": "https://isleofcode.com"
   },
+
   "contributors": [
     {
       "name": "Aidan Nulman",
@@ -27,16 +30,17 @@
       "url": "https://isleofcode.com"
     }
   ],
+
   "keywords": [
     "ember-addon",
     "cordova",
-    "ember-cli-cordova",
+    "crosswalk",
+    "phonegap",
     "ember cordova",
     "ember-cordova",
-    "ember",
-    "ember-cordova-events",
-    "ember cordova events"
+    "ember-cordova-events"
   ],
+
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
     "ember-cli": "2.7.0",
@@ -58,6 +62,7 @@
   "dependencies": {
     "ember-cli-babel": "^5.1.6"
   },
+
   "ember-addon": {
     "configPath": "tests/dummy/config"
   }
