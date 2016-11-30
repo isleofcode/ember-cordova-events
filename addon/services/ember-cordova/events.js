@@ -10,6 +10,7 @@ const {
   Service,
   assert,
   isPresent,
+  isBlank,
   on,
   run
 } = Ember;
