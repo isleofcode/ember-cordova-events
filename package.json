@@ -7,7 +7,7 @@
   },
 
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/isleofcode/ember-cordova-events/",
   "engines": {
     "node": ">= 0.10.0"
   },
