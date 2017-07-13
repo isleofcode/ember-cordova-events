@@ -20,6 +20,8 @@ const CORDOVA_EVENTS = new A([
   'deviceready',
   'pause',
   'resume',
+  'resign',
+  'active',
   'backbutton',
   'menubutton',
   'searchbutton',
