@@ -37,7 +37,7 @@ export default function subscribe(path, method) {
     };
 
     // subscribe to the event
-    this.get(service).on(event, _listener);
+    this.get(service).on(event, this, _listener);
   };
 
   return on.call(this, 'init', computedFn);
