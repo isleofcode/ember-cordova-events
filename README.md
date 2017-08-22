@@ -1,4 +1,5 @@
-# Ember-cordova-events
+# Ember-cordova-events 
+[![Build Status](https://travis-ci.org/isleofcode/ember-cordova-events.svg?branch=master)](https://travis-ci.org/isleofcode/ember-cordova-events)
 
 This README outlines the details of collaborating on this Ember addon.
 
