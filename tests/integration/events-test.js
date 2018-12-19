@@ -1,14 +1,10 @@
 /* global Event */
-import Ember from 'ember';
 import { moduleFor, test } from 'ember-qunit';
 import td from 'testdouble';
 import subscribe from 'ember-cordova-events/utils/subscribe';
-
-const {
-  A,
-  Object: EmberObject,
-  inject
-} = Ember;
+import EmberObject from '@ember/object';
+import { A } from '@ember/array';
+import { inject as service } from '@ember/service';
 
 // from https://cordova.apache.org/docs/en/4.0.0/cordova_events_events.md.html
 const CORDOVA_EVENTS = new A([
@@ -38,7 +34,8 @@ moduleFor('service:ember-cordova/events', 'Integration | Service | ember-cordova
     let properties = {};
 
     CORDOVA_EVENTS.forEach((name) => {
-      properties[name] = function() {};
+      properties[name] = function() {
+      };
     });
 
     this.pluginDouble = td.object(properties);
@@ -54,11 +51,13 @@ test('events listeners are triggered', function(assert) {
   assert.expect(0);
 
   CORDOVA_EVENTS.forEach((name) => {
-    let matchers = td.matchers.argThat((event) => { return event.type === name; });
+    let matchers = td.matchers.argThat((event) => {
+      return event.type === name;
+    });
     let eventCallback = this.pluginDouble[name];
     let properties = {
       container: this.container,
-      cordovaEvents: inject.service('ember-cordova/events')
+      cordovaEvents: service('ember-cordova/events')
     };
 
     properties[`on${name}`] = subscribe(`cordovaEvents.${name}`, eventCallback);
