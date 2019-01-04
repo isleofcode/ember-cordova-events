@@ -16,7 +16,7 @@ const {
 } = Ember;
 
 // from https://cordova.apache.org/docs/en/4.0.0/cordova_events_events.md.html
-const CORDOVA_EVENTS = new A([
+const CORDOVA_EVENTS = A([
   'deviceready',
   'pause',
   'resume',
