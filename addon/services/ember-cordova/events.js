@@ -1,19 +1,10 @@
-import Ember from 'ember';
-
-const {
-  A,
-  Evented,
-  RSVP: {
-    defer,
-    resolve
-  },
-  Service,
-  assert,
-  isPresent,
-  isBlank,
-  on,
-  run
-} = Ember;
+import { A } from '@ember/array';
+import { resolve, defer } from 'rsvp';
+import Service from '@ember/service';
+import { assert } from '@ember/debug';
+import { isBlank, isPresent } from '@ember/utils';
+import Evented, { on } from '@ember/object/evented';
+import { run } from '@ember/runloop';
 
 // from https://cordova.apache.org/docs/en/4.0.0/cordova_events_events.md.html
 const CORDOVA_EVENTS = A([

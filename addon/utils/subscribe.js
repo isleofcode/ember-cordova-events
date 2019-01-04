@@ -1,11 +1,6 @@
-import Ember from 'ember';
-
-const {
-  assert,
-  isBlank,
-  isPresent,
-  on
-} = Ember;
+import { assert } from '@ember/debug';
+import { isPresent, isBlank } from '@ember/utils';
+import { on } from '@ember/object/evented';
 
 export default function subscribe(path, method) {
   let _listener = null;
