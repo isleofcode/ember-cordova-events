@@ -1,0 +1,23 @@
+<ul>
+  <li>
+    {{this.name}}
+    <button {{action (mut this.bubbles) (if this.bubbles false true)}}>
+      Bubbles:
+      {{if this.bubbles "true" "false"}}
+    </button>
+  </li>
+  {{on-cordova "backbutton" (action "yell") bubbles=this.bubbles}}
+  {{#if this.child}}
+    {{on-cordova-component name=(concat this.name "'s child")}}
+  {{/if}}
+  <button {{action (mut this.child) (if this.child false true)}}>
+    {{#if this.child}}
+      - Remove child for {{this.name}}
+    {{else}}
+      + Add child for {{this.name}}
+    {{/if}}
+  </button>
+		<br>
+		<br>
+  {{yield}}
+</ul>
