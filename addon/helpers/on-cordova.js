@@ -32,6 +32,6 @@ export default Helper.extend({
     if (this.fn && this.event) {
       this.cordovaEvents.off(this.event, this, "doFn");
     }
-    this._super.willDestroy();
+    this._super(...arguments);
   },
 });
