@@ -2,11 +2,11 @@ import Helper from "@ember/component/helper";
 import { inject as service } from "@ember/service";
 
 export function callbackWrapper(event, callback, bubbles) {
-  if (event.bubbles !== false) {
+  if (event.cancelBubble !== true) {
     let shouldBubble = callback(event);
 
     if (shouldBubble === false || bubbles === false) {
-      event.bubbles = false;
+      event.cancelBubble = true;
     }
 
     return shouldBubble;
@@ -14,7 +14,7 @@ export function callbackWrapper(event, callback, bubbles) {
 }
 
 export default Helper.extend({
-  cordovaEvents: service('ember-cordova/events'),
+  cordovaEvents: service("ember-cordova/events"),
 
   doFn(event) {
     return callbackWrapper(event, this.fn, this.bubbles);
