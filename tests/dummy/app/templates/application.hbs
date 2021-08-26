@@ -1,5 +1,11 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+{{input value=(mut (get this "currentEvent"))}}
+<button {{action "emitEvent"}}>
+  Emit event
+</button>
+<div>
+  {{#on-cordova-component name="grandfather"}}
+    {{#on-cordova-component name="father"}}
+      {{#on-cordova-component name="child"}}{{/on-cordova-component}}
+    {{/on-cordova-component}}
+  {{/on-cordova-component}}
+</div>
